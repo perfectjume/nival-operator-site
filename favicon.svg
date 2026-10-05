@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-29.21 -58.95 588.42 588.42">
+<defs><linearGradient id="ice" gradientUnits="userSpaceOnUse" x1="256" y1="80" x2="256" y2="420"><stop offset="0" stop-color="#d6e4ff"/><stop offset="1" stop-color="#6f9cf0"/></linearGradient></defs>
+<path d="M124 408 V128 L388 408 V128" fill="none" stroke="url(#ice)" stroke-width="52" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<path transform="translate(0 -32.95)" d="M388 30 Q394 68 432 74 Q394 80 388 118 Q382 80 344 74 Q382 68 388 30 Z" fill="#d6e4ff"/></svg>

@@ -31,14 +31,12 @@ main {
   padding: 56px 20px 80px;
 }
 .mark {
-  font: 600 13px 'JetBrains Mono', ui-monospace, monospace;
-  letter-spacing: 3px;
-  color: var(--ink);
-  text-decoration: none;
+  display: inline-block;
+  line-height: 0;
 }
-.mark span {
-  color: var(--accent);
-  letter-spacing: 0;
+.mark img {
+  height: 24px;
+  width: auto;
 }
 h1 {
   margin: 40px 0 8px;

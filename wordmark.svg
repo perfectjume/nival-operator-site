@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1370.6" height="477" viewBox="97.7 -3.2 1370.6 477">
+<defs><linearGradient id="ice" gradientUnits="userSpaceOnUse" x1="0" y1="80" x2="0" y2="420"><stop offset="0" stop-color="#d6e4ff"/><stop offset="1" stop-color="#6f9cf0"/></linearGradient><clipPath id="cv"><rect x="505.5" y="128" width="500" height="280"/><rect x="720.5" y="408" width="70" height="100"/></clipPath><clipPath id="ca"><rect x="782.6" y="128" width="500" height="280"/><rect x="997.6" y="28" width="70" height="100"/></clipPath></defs>
+<path d="M124 408 V128 L388 408 V128" stroke="url(#ice)" stroke-width="52" fill="none" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<path transform="translate(0 -32.95)" d="M388 30 Q394 68 432 74 Q394 80 388 118 Q382 80 344 74 Q382 68 388 30 Z" fill="#d6e4ff"/>
+<path d="M500.0 408 V128" stroke="url(#ice)" stroke-width="52" fill="none" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<path clip-path="url(#cv)" d="M586.6 92.7 L755.5 408 L924.4 92.7" stroke="url(#ice)" stroke-width="52" fill="none" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<path clip-path="url(#ca)" d="M863.7 443.3 L1032.6 128 L1201.4 443.3" stroke="url(#ice)" stroke-width="52" fill="none" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<path d="M1298.1 128 V382.0 H1468.1" stroke="url(#ice)" stroke-width="52" fill="none" stroke-linejoin="miter" stroke-miterlimit="10"/>
+</svg>
