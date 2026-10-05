@@ -1,0 +1,77 @@
+:root {
+  --bg: #07080c;
+  --ink: #eef3fb;
+  --ink2: rgba(238, 243, 251, 0.7);
+  --ink3: rgba(238, 243, 251, 0.45);
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #a4c1ff;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eef1f6;
+    --ink: #0b1020;
+    --ink2: rgba(11, 16, 32, 0.78);
+    --ink3: rgba(11, 16, 32, 0.55);
+    --line: rgba(11, 16, 32, 0.14);
+    --accent: #2a4fc2;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 'Inter Tight', system-ui, sans-serif;
+}
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
+}
+.mark {
+  font: 600 13px 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: 3px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mark span {
+  color: var(--accent);
+  letter-spacing: 0;
+}
+h1 {
+  margin: 40px 0 8px;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+}
+h2 {
+  margin: 36px 0 8px;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+}
+p,
+li {
+  color: var(--ink2);
+}
+.lead {
+  font-size: 18px;
+  color: var(--ink);
+}
+.label {
+  font: 500 11px 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+a {
+  color: var(--accent);
+}
+footer {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink3);
+}

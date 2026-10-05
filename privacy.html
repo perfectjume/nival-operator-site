@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy · Nival Operator</title>
+    <meta name="description" content="How Nival Operator handles your Gmail data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <a class="mark" href="./">NIVAL <span>✦</span></a>
+      <h1>Privacy policy</h1>
+      <p class="label">Last updated October 5, 2026</p>
+
+      <p class="lead">
+        Nival Operator runs on your own computer. Your email and calendar stay there: we don't run a server
+        that receives them, we don't have an account system, and we don't collect analytics.
+      </p>
+
+      <h2>What the app accesses</h2>
+      <p>
+        When you connect Gmail with "Sign in with Google", the app asks Google for permission to read, label,
+        archive and send your email (the <code>gmail.modify</code> permission; it cannot permanently delete
+        email). With that it:
+      </p>
+      <ul>
+        <li>shows your inbox and conversations, and searches them when you ask;</li>
+        <li>marks conversations read and archives them when you ask;</li>
+        <li>sends the emails you write in the app;</li>
+        <li>checks new emails against the watch rules you set up, to show you a notification when one matches.</li>
+      </ul>
+      <p>You can also connect with a Gmail app password instead; the app then does the same over Gmail's IMAP and SMTP.</p>
+
+      <h2>Where your data is kept</h2>
+      <ul>
+        <li>Your Google sign-in (or app password) is stored on your computer, encrypted with your operating system's key store.</li>
+        <li>Your calendar events, watch rules, alerts and settings are stored on your computer.</li>
+        <li>Your email is fetched from Gmail when the app shows it and is not copied anywhere else.</li>
+      </ul>
+      <p>
+        The app talks only to Google (for Gmail) and, if you turn on updates, to GitHub (to download new
+        versions). Nothing is sent to the developer.
+      </p>
+
+      <h2>Optional features you choose</h2>
+      <ul>
+        <li>
+          <strong>Claude extension.</strong> If you install the Nival extension in the Claude desktop app, Claude
+          can ask Nival to list or read your email when you ask it to in a conversation. What Claude reads is then
+          handled by Anthropic under your Claude account and its terms.
+        </li>
+        <li>
+          <strong>Your own server.</strong> If you choose to run Mail and Watch through an operator server you set
+          up on your own Cloudflare account, your Gmail sign-in and rules are kept on that server, under your
+          control.
+        </li>
+      </ul>
+
+      <h2>Sharing</h2>
+      <p>
+        We don't sell, share or transfer your data, and don't use it for advertising or to train AI models.
+        Nival Operator's use and transfer of information received from Google APIs adheres to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.
+      </p>
+
+      <h2>Removing your data</h2>
+      <ul>
+        <li>In the app, Settings › Disconnect Gmail removes Google's access and deletes the rules and alerts on your computer.</li>
+        <li>You can also remove the app's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+        <li>Uninstalling the app removes it and its data from your computer.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy: <a href="https://github.com/perfectjume">github.com/perfectjume</a>.</p>
+
+      <footer>
+        <p class="label"><a href="./">Nival Operator</a> · by perfectjume</p>
+      </footer>
+    </main>
+  </body>
+</html>
