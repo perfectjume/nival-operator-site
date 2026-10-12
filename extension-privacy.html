@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy · Nival browser extension</title>
+    <meta name="description" content="How the Nival browser extension handles your data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <a class="mark" href="./"><picture><source srcset="wordmark-light.svg" media="(prefers-color-scheme: light)" /><img src="wordmark.svg" alt="Nival" height="24" /></picture></a>
+      <h1>Privacy policy: Nival browser extension</h1>
+      <p class="label">Last updated October 12, 2026</p>
+
+      <p class="lead">
+        The Nival browser extension works together with Nival Shell, a desktop shell for Windows, on the same
+        computer. It lets Nival Shell's assistant fill your saved logins and payment cards on the right website
+        without the assistant ever seeing them.
+      </p>
+
+      <h2>What the extension reads</h2>
+      <p>Only when Nival Shell asks (when it is about to fill a field), and only in the tab you're using:</p>
+      <ul>
+        <li>the address of the page, and of the frame within it, that has the keyboard focus;</li>
+        <li>whether the focused field takes text, and whether it is a password field.</li>
+      </ul>
+
+      <h2>What it does with it</h2>
+      <p>
+        It gives that information to Nival Shell on the same computer, through the browser's native messaging,
+        and to nothing else. Nival Shell uses it to check that a login is filled only on its own site and that a
+        password goes only into a password field. Before a card's number is typed, the extension covers the field
+        on the page so the digits don't appear in screenshots; the cover goes when the field is emptied, or after
+        15 minutes.
+      </p>
+
+      <h2>What it never does</h2>
+      <ul>
+        <li>
+          It never receives your passwords, one-time codes or card details. Nival Shell keeps them on your
+          computer, encrypted by Windows for your account, and types them itself.
+        </li>
+        <li>It sends nothing to the internet, to Nival, or to anyone else. It has no server and no analytics.</li>
+        <li>It keeps nothing: it stores no data in the browser and keeps no history.</li>
+        <li>It doesn't read or change any page unless Nival Shell asks, as described above.</li>
+      </ul>
+
+      <h2>Sharing</h2>
+      <p>
+        We don't sell, share or transfer your data, and don't use it for advertising, for anything other than
+        filling your logins and cards, or to determine creditworthiness.
+      </p>
+
+      <h2>Removing it</h2>
+      <p>
+        Nival Shell adds the extension to your browsers and takes it out again when Nival Shell is uninstalled, or
+        from Settings › Passwords › Browsers in Nival Shell.
+      </p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version is published at this address with its date above.</p>
+
+      <h2>Contact</h2>
+      <p>Renjume, <a href="mailto:macaluso.jeshuan@gmail.com">macaluso.jeshuan@gmail.com</a>.</p>
+
+      <footer>
+        <p class="label"><a href="./">Nival</a> · by Renjume</p>
+      </footer>
+    </main>
+  </body>
+</html>
