@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-29.21 -58.95 588.42 588.42">
-<defs><linearGradient id="ice" gradientUnits="userSpaceOnUse" x1="256" y1="80" x2="256" y2="420"><stop offset="0" stop-color="#d6e4ff"/><stop offset="1" stop-color="#6f9cf0"/></linearGradient></defs>
-<path d="M124 408 V128 L388 408 V128" fill="none" stroke="url(#ice)" stroke-width="52" stroke-linejoin="miter" stroke-miterlimit="10"/>
-<path transform="translate(0 -32.95)" d="M388 30 Q394 68 432 74 Q394 80 388 118 Q382 80 344 74 Q382 68 388 30 Z" fill="#d6e4ff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 230 230">
+<rect width="230" height="230" rx="50" fill="#07080c"/>
+<g transform="translate(51.98 85.86) scale(0.96)">
+<path d="M11 89 V50 A39 39 0 0 1 89 50 V89" fill="none" stroke="#f5f5f6" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+<path transform="translate(106 -14)" d="M0 -25.3 Q3.44 -3.44 25.3 0 Q3.44 3.44 0 25.3 Q-3.44 3.44 -25.3 0 Q-3.44 -3.44 0 -25.3 Z" fill="#d6e4ff"/>
+</g>
+</svg>
