@@ -7,33 +7,49 @@
     <meta name="description" content="Nival Operator: a calendar with your Gmail and email alerts, on your own computer." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow glow-0"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="n-frost"></div>
+    </div>
     <main>
-      <a class="mark" href="./"><picture><source srcset="wordmark-light.svg" media="(prefers-color-scheme: light)" /><img src="wordmark.svg" alt="Nival" height="24" /></picture></a>
-      <h1>Nival Operator</h1>
-      <p class="lead">A calendar with your Gmail and email alerts, running on your own computer.</p>
+      <header class="top n-rise" style="--i: 0">
+        <a class="mark" href="./"><picture><source srcset="wordmark-light.svg" media="(prefers-color-scheme: light)" /><img src="wordmark.svg" alt="Nival" height="24" /></picture></a>
+      </header>
+      <section class="hero">
+        <h1 class="n-rise" style="--i: 1">Nival Operator</h1>
+        <p class="lead n-rise" style="--i: 2">A calendar with your Gmail and email alerts, running on your own computer.</p>
+      </section>
 
-      <h2>What it does</h2>
-      <ul>
-        <li><strong>Calendar:</strong> month, week and day views, with breaks you can mark in your day.</li>
-        <li><strong>Mail:</strong> read, search, archive, write and reply to your Gmail.</li>
-        <li><strong>Watch:</strong> rules that tell you when a certain person writes or certain words turn up, right away or in your next break.</li>
-      </ul>
+      <div class="panel sheet n-rise" style="--i: 3">
+        <section class="n-card n-rise" style="--i: 4">
+          <h2>What it does</h2>
+          <ul class="tiles">
+            <li><strong>Calendar:</strong> month, week and day views, with breaks you can mark in your day.</li>
+            <li><strong>Mail:</strong> read, search, archive, write and reply to your Gmail.</li>
+            <li><strong>Watch:</strong> rules that tell you when a certain person writes or certain words turn up, right away or in your next break.</li>
+          </ul>
+        </section>
 
-      <h2>Your data stays with you</h2>
-      <p>
-        Nival Operator is a desktop app. It connects to Gmail directly from your computer and keeps your
-        sign-in, rules and alerts there. There is no Nival server, no account with us and no analytics.
-        Read the <a href="privacy.html">privacy policy</a> for the details.
-      </p>
+        <section class="n-card n-rise" style="--i: 5">
+          <h2>Your data stays with you</h2>
+          <p>
+            Nival Operator is a desktop app. It connects to Gmail directly from your computer and keeps your
+            sign-in, rules and alerts there. There is no Nival server, no account with us and no analytics.
+            Read the <a href="privacy.html">privacy policy</a> for the details.
+          </p>
+        </section>
+      </div>
 
-      <footer>
+      <footer class="n-rise" style="--i: 6">
         <p class="label">Nival Operator · by <a href="https://github.com/perfectjume">perfectjume</a></p>
-        <p><a href="privacy.html">Privacy policy</a></p>
+        <p><a class="btn primary" href="privacy.html">Privacy policy</a></p>
       </footer>
     </main>
   </body>

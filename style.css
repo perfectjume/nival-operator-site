@@ -1,75 +1,581 @@
+/*
+ * Nival's look (Nival Shell's src/styles/tokens.css and global.css, which are Nival Operator's
+ * theme.ts): the base lit by three soft glows under a frost, glass sheets holding solid cards,
+ * neutral ink in opacity steps and no colour accent, pills and corners nesting outside in,
+ * Inter Tight for text and JetBrains Mono for small uppercase labels, and Nival's motion.
+ * Colours are the shell's tokens, dark and light; none is written anywhere else.
+ */
+
+/* ---------- Tokens: the background (base and glows) ---------- */
 :root {
-  --bg: #07080c;
-  --ink: #eef3fb;
-  --ink2: rgba(238, 243, 251, 0.7);
-  --ink3: rgba(238, 243, 251, 0.45);
-  --line: rgba(255, 255, 255, 0.1);
-  --accent: #a4c1ff;
+  --n-bg: #07080c;
+  --n-glow-0: radial-gradient(closest-side, rgba(84, 124, 255, 0.3) 0%, rgba(84, 124, 255, 0.135) 45%, rgba(84, 124, 255, 0) 100%);
+  --n-glow-1: radial-gradient(closest-side, rgba(150, 112, 255, 0.24) 0%, rgba(150, 112, 255, 0.108) 45%, rgba(150, 112, 255, 0) 100%);
+  --n-glow-2: radial-gradient(closest-side, rgba(56, 182, 204, 0.16) 0%, rgba(56, 182, 204, 0.072) 45%, rgba(56, 182, 204, 0) 100%);
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #eef1f6;
-    --ink: #0b1020;
-    --ink2: rgba(11, 16, 32, 0.78);
-    --ink3: rgba(11, 16, 32, 0.55);
-    --line: rgba(11, 16, 32, 0.14);
-    --accent: #2a4fc2;
+    --n-bg: #e1e5ed;
+    --n-glow-0: radial-gradient(closest-side, rgba(92, 132, 255, 0.2) 0%, rgba(92, 132, 255, 0.09) 45%, rgba(92, 132, 255, 0) 100%);
+    --n-glow-1: radial-gradient(closest-side, rgba(160, 120, 255, 0.14) 0%, rgba(160, 120, 255, 0.063) 45%, rgba(160, 120, 255, 0) 100%);
+    --n-glow-2: radial-gradient(closest-side, rgba(48, 186, 196, 0.13) 0%, rgba(48, 186, 196, 0.059) 45%, rgba(48, 186, 196, 0) 100%);
   }
 }
-* {
+
+/* ---------- Tokens: the dark scheme ---------- */
+:root {
+  --n-ink: #f5f5f6;
+  --n-ink2: rgba(245, 245, 246, 0.66);
+  --n-ink3: rgba(245, 245, 246, 0.4);
+  --n-ink4: rgba(245, 245, 246, 0.22);
+  --n-line: rgba(255, 255, 255, 0.07);
+  --n-line2: rgba(255, 255, 255, 0.14);
+  --n-groove-deep: rgba(0, 0, 0, 0.5);
+  --n-groove-soft: rgba(0, 0, 0, 0.25);
+  --n-groove-cross: rgba(0, 0, 0, 0.333);
+  --n-groove-shine: rgba(255, 255, 255, 0.05);
+  --n-groove-span: 4px;
+  --n-groove-across: linear-gradient(to bottom, var(--n-groove-shine) 0 1px, var(--n-groove-deep) 1px 3px, var(--n-groove-shine) 3px 4px);
+  --n-no-shadow: 0 0 transparent, 0 0 transparent;
+  --n-edge: inset 0 0 0 1px var(--n-groove-cross), inset 0 0 0 2px var(--n-groove-soft);
+  --n-edge-shine-at: -3px;
+  --n-accent: #f5f5f6;
+  --n-glass-window: rgba(14, 14, 16, 0.34);
+  --n-panel: #141416;
+  --n-frost: rgba(6, 6, 8, 0.5);
+  --n-frost-sheen: rgba(255, 255, 255, 0.05);
+  --n-sheen: linear-gradient(155deg, var(--n-frost-sheen), transparent 45%);
+  --n-glass-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.8);
+  --n-window-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --n-shadow-rgb: 0, 0, 0;
+  --n-shadow-strength: 1;
+  --n-lift-shadow: 0 8px 18px -10px rgba(var(--n-shadow-rgb), calc(0.45 * var(--n-shadow-strength)));
+  --n-surface: #141416;
+  --n-raised: #141416;
+  --n-raised-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+  --n-hover-tint: rgba(255, 255, 255, 0.05);
+  --n-hover-shade: inset 0 0 0 999px var(--n-hover-tint);
+  --n-press-shade: inset 0 0 0 999px rgba(255, 255, 255, 0.09);
+  --n-primary-hover-tint: rgba(14, 14, 16, 0.12);
+  --n-primary-hover-shade: inset 0 0 0 999px var(--n-primary-hover-tint);
+  --n-disabled: #1c1c1f;
+  --n-primary: #f5f5f6;
+  --n-primary-hover: #f5f5f6;
+  --n-on-primary: #0e0e10;
+  --n-scroll-rest: color-mix(in srgb, var(--n-ink) 22%, transparent);
+  --n-scroll-hover: color-mix(in srgb, var(--n-ink) 38%, transparent);
+  --n-scroll-active: color-mix(in srgb, var(--n-ink) 52%, transparent);
+  --n-selection: color-mix(in srgb, var(--n-ink) 24%, transparent);
+  --n-logo-star: #d6e4ff;
+  color-scheme: dark;
+}
+
+/* ---------- Tokens: the light scheme ---------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    --n-ink: #111113;
+    --n-ink2: rgba(17, 17, 19, 0.8);
+    --n-ink3: rgba(17, 17, 19, 0.64);
+    --n-ink4: rgba(17, 17, 19, 0.47);
+    --n-line: rgba(17, 17, 19, 0.12);
+    --n-line2: rgba(17, 17, 19, 0.22);
+    --n-groove-deep: rgba(0, 0, 0, 0.1);
+    --n-groove-soft: rgba(0, 0, 0, 0.05);
+    --n-groove-cross: rgba(0, 0, 0, 0.053);
+    --n-groove-shine: rgba(255, 255, 255, 0.05);
+    --n-accent: #111113;
+    --n-glass-window: rgba(255, 255, 255, 0.26);
+    --n-panel: #ffffff;
+    --n-frost: rgba(244, 247, 252, 0.46);
+    --n-frost-sheen: rgba(255, 255, 255, 0.4);
+    --n-glass-shadow: 0 1px 2px rgba(17, 17, 19, 0.06), 0 30px 70px -30px rgba(17, 17, 19, 0.3);
+    --n-window-shadow: 0 6px 18px -6px rgba(17, 17, 19, 0.26), 0 1px 3px rgba(17, 17, 19, 0.08);
+    --n-shadow-rgb: 17, 17, 19;
+    --n-shadow-strength: 0.4;
+    --n-surface: #ffffff;
+    --n-raised: #ffffff;
+    --n-raised-shadow: 0 1px 2px rgba(17, 17, 19, 0.07), 0 3px 12px -3px rgba(17, 17, 19, 0.14);
+    --n-hover-tint: rgba(17, 17, 19, 0.04);
+    --n-press-shade: inset 0 0 0 999px rgba(17, 17, 19, 0.08);
+    --n-primary-hover-tint: rgba(255, 255, 255, 0.18);
+    --n-disabled: #ececee;
+    --n-primary: #111113;
+    --n-primary-hover: #111113;
+    --n-on-primary: #ffffff;
+    --n-logo-star: #2a4fc2;
+    color-scheme: light;
+  }
+}
+
+/* ---------- Tokens: shape, type, blur, motion ---------- */
+:root {
+  --r-pill: 999px;
+  --r-panel: 26px;
+  --inset-panel: 8px;
+  --inset-card: 6px;
+  --r-card: calc(var(--r-panel) - var(--inset-panel)); /* 18 */
+  --r-tile: calc(var(--r-card) - var(--inset-card)); /* 12 */
+  --h-control: 38px;
+
+  --font-text: 'Inter Tight', 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
+
+  --blur-window: 30px;
+  --blur-frost: 44px;
+  --n-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: var(--ease);
+  --t-fast: 180ms;
+  --t-mid: 320ms;
+  --t-list: 420ms;
+  --stagger: 30ms;
+
+  /* The page's own room: a phone's 16 px gutter, more on a wide screen. */
+  --gutter: 16px;
+  --card-pad: 18px;
+}
+@media (min-width: 720px) {
+  :root {
+    --gutter: 32px;
+    --card-pad: 24px;
+  }
+}
+
+/* ---------- Page ---------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+html {
+  background: var(--n-bg);
+}
+/* The base is on html, so the backdrop (z-index -1) shows through the body. */
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 16px/1.6 'Inter Tight', system-ui, sans-serif;
+  min-height: 100vh;
+  color: var(--n-ink);
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+::selection {
+  background: var(--n-selection);
+}
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 1px solid var(--n-accent);
+  outline-offset: 2px;
+}
+
+/* Nival's scrollbar: a rounded thumb in the ink, faint at rest. */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  min-height: 40px;
+  border: 3px solid transparent;
+  border-radius: var(--r-pill);
+  background-color: var(--n-scroll-rest);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-width: 2px;
+  background-color: var(--n-scroll-hover);
+}
+::-webkit-scrollbar-thumb:active {
+  border-width: 2px;
+  background-color: var(--n-scroll-active);
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ---------- The background: the base, three glows drifting on long loops, the frost over them ---------- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  container-type: size;
+  pointer-events: none;
+  background: var(--n-bg);
+}
+.glow {
+  position: absolute;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  will-change: transform;
+  animation-timing-function: var(--ease-io);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.glow-0 {
+  left: 18%;
+  top: 12%;
+  width: 95cqmax;
+  background: var(--n-glow-0);
+  animation-name: drift-a;
+  animation-duration: 46s;
+}
+.glow-1 {
+  left: 88%;
+  top: 55%;
+  width: 85cqmax;
+  background: var(--n-glow-1);
+  animation-name: drift-b;
+  animation-duration: 58s;
+}
+.glow-2 {
+  left: 35%;
+  top: 98%;
+  width: 80cqmax;
+  background: var(--n-glow-2);
+  animation-name: drift-c;
+  animation-duration: 71s;
+}
+@keyframes drift-a {
+  from { transform: translate(-8%, -6%) scale(1); }
+  to { transform: translate(10%, 8%) scale(1.15); }
+}
+@keyframes drift-b {
+  from { transform: translate(6%, -10%) scale(1.1); }
+  to { transform: translate(-12%, 6%) scale(0.92); }
+}
+@keyframes drift-c {
+  from { transform: translate(-10%, 8%) scale(0.95); }
+  to { transform: translate(8%, -8%) scale(1.12); }
+}
+.n-frost {
+  position: absolute;
+  inset: 0;
+  background-color: var(--n-frost);
+  background-image: var(--n-sheen), var(--n-grain);
+  -webkit-backdrop-filter: blur(var(--blur-frost)) saturate(1.2);
+  backdrop-filter: blur(var(--blur-frost)) saturate(1.2);
+}
+
+/* ---------- Layout ---------- */
 main {
-  max-width: 680px;
+  max-width: calc(760px + 2 * var(--gutter));
   margin: 0 auto;
-  padding: 56px 20px 80px;
+  padding: 28px var(--gutter) 56px;
+}
+.top {
+  display: flex;
+  align-items: center;
+  height: var(--h-control);
 }
 .mark {
   display: inline-block;
   line-height: 0;
+  border-radius: var(--r-tile);
+  transition: scale var(--t-mid) var(--ease-spring);
+}
+.mark:hover {
+  scale: 1.04;
+}
+.mark:active {
+  scale: 0.98;
 }
 .mark img {
   height: 24px;
   width: auto;
 }
+.hero {
+  padding: 56px 0 32px;
+}
+@media (min-width: 720px) {
+  .hero {
+    padding: 88px 0 40px;
+  }
+}
+
+/* ---------- Type ---------- */
+h1,
+h2,
+p {
+  margin: 0;
+}
 h1 {
-  margin: 40px 0 8px;
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -1.2px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+@media (min-width: 720px) {
+  h1 {
+    font-size: 60px;
+  }
 }
 h2 {
-  margin: 36px 0 8px;
-  font-size: 20px;
-  letter-spacing: -0.2px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--n-ink);
 }
 p,
 li {
-  color: var(--ink2);
+  color: var(--n-ink2);
+}
+p + p {
+  margin-top: 12px;
+}
+strong {
+  font-weight: 600;
+  color: var(--n-ink);
 }
 .lead {
-  font-size: 18px;
-  color: var(--ink);
+  margin-top: 18px;
+  max-width: 600px;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--n-ink2);
+  text-wrap: pretty;
 }
+@media (min-width: 720px) {
+  .lead {
+    font-size: 21px;
+  }
+}
+/* Small uppercase mono labels. */
 .label {
-  font: 500 11px 'JetBrains Mono', ui-monospace, monospace;
-  letter-spacing: 1.2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--ink3);
+  color: var(--n-ink3);
+}
+h1 + .label {
+  margin-top: 16px;
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  box-shadow: var(--n-edge);
+  color: var(--n-ink);
+  white-space: nowrap;
 }
 a {
-  color: var(--accent);
+  color: var(--n-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--n-ink4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+  transition: text-decoration-color var(--t-fast) linear, color var(--t-fast) linear;
 }
-footer {
-  margin-top: 56px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
+a:hover {
+  text-decoration-color: var(--n-ink);
+}
+
+/* ---------- Glass and cards ---------- */
+/* Glass that holds the cards: Nival's sheets (`.panel.sheet`). Its cards sit in its corners,
+   --inset-panel in, so their corners are its own less that. */
+.panel {
+  position: relative;
+  isolation: isolate;
+  border-radius: var(--r-panel);
+}
+.panel.sheet {
+  display: grid;
+  gap: var(--inset-panel);
+  padding: var(--inset-panel);
+  background-color: var(--n-glass-window);
+  -webkit-backdrop-filter: blur(var(--blur-window));
+  backdrop-filter: blur(var(--blur-window));
+  box-shadow: var(--n-window-shadow);
+}
+/* A card on a panel: solid, its rounded edge carved in. */
+.n-card {
+  position: relative;
+  padding: var(--card-pad);
+  border-radius: var(--r-card);
+  background: var(--n-surface);
+}
+.n-card > h2 + * {
+  margin-top: 8px;
+}
+.n-card > p + ul,
+.n-card > ul + p {
+  margin-top: 14px;
+}
+/* Lists are rows, a carved line between each running to the card's edges. */
+.n-card ul {
+  list-style: none;
+  margin-left: calc(-1 * var(--card-pad));
+  margin-right: calc(-1 * var(--card-pad));
+  padding: 0;
+}
+.n-card > h2 + ul {
+  margin-top: 14px;
+}
+.n-card ul:last-child {
+  margin-bottom: calc(-1 * var(--card-pad) + 4px);
+}
+.n-card li {
+  position: relative;
+  padding: 12px var(--card-pad);
+}
+.n-card li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--n-groove-span);
+  margin-top: calc(var(--n-groove-span) / -2);
+  background: var(--n-groove-across);
+}
+.n-card li > strong {
+  display: block;
+  margin-bottom: 2px;
+}
+/* The home page's three things it does: tiles side by side on a wide screen. */
+@media (min-width: 720px) {
+  .n-card ul.tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .n-card ul.tiles li {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .n-card ul.tiles li + li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--n-groove-span) / -2);
+    width: var(--n-groove-span);
+    background: linear-gradient(to right, var(--n-groove-shine) 0 1px, var(--n-groove-deep) 1px 3px, var(--n-groove-shine) 3px 4px);
+  }
+}
+
+/* Every solid shape's rounded edge: the outline in, and its shine just inside. */
+.n-card::before,
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: var(--n-edge);
+  outline: 1px solid var(--n-groove-shine);
+  outline-offset: var(--n-edge-shine-at);
+  pointer-events: none;
+}
+
+/* ---------- Controls ---------- */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--h-control);
+  padding: 0 18px;
+  border-radius: var(--r-pill);
+  background: var(--n-raised);
+  box-shadow: var(--n-raised-shadow), inset 0 0 0 999px transparent;
+  color: var(--n-ink);
   font-size: 14px;
-  color: var(--ink3);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition-property: background-color, color, box-shadow, scale, translate;
+  transition-duration: var(--t-fast), var(--t-fast), var(--t-fast), var(--t-mid), var(--t-mid);
+  transition-timing-function: linear, linear, linear, var(--ease-spring), var(--ease-spring);
+}
+.btn:hover {
+  translate: 0 -1px;
+  box-shadow: var(--n-raised-shadow), var(--n-hover-shade);
+}
+.btn:active {
+  translate: 0;
+  scale: 0.98;
+  box-shadow: var(--n-raised-shadow), var(--n-press-shade);
+}
+/* The main action: solid ink, its words inverted. */
+.btn.primary {
+  background: var(--n-primary);
+  color: var(--n-on-primary);
+}
+.btn.primary:hover {
+  background: var(--n-primary-hover);
+  box-shadow: var(--n-raised-shadow), var(--n-primary-hover-shade);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin-top: 28px;
+  padding: 0 calc(var(--inset-panel) + var(--card-pad));
+}
+footer p,
+footer p + p {
+  margin: 0;
+}
+.label a {
+  color: inherit;
+}
+
+/* ---------- Motion: the page's parts rise in, one after another ---------- */
+@keyframes n-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.n-rise {
+  animation: n-rise var(--t-list) var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+  .glow {
+    animation: none;
+  }
+}
+
+/* A list followed by more text closes with a carved line too. */
+.n-card ul:not(:last-child) {
+  position: relative;
+}
+.n-card ul:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--n-groove-span);
+  margin-bottom: calc(var(--n-groove-span) / -2);
+  background: var(--n-groove-across);
 }
