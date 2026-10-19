@@ -1,0 +1,9 @@
+{
+  "name": "nival-operator-site",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Nival Operator's site. `npm test`: its design files are nival-design's.",
+  "scripts": {
+    "test": "node scripts/design-check.mjs"
+  }
+}
