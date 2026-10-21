@@ -12,12 +12,16 @@ checklist; a change isn't done until it holds:
 1. **Only what's needed.** Collect, keep and send only what the feature needs, for as long as it
    needs it; say how long things are kept, and delete what's no longer needed.
 2. **Sensitive capture is opt-in.** Reading the screen, listening, recording, long-term memory and
-   sending data to an AI in the cloud are the person's choice, each a switch of its own (never bundled,
-   never on until turned on); calls, meetings and private messages are never captured unless the person
-   asks, and while something listens it shows.
-3. **Other people.** What's captured of others (on a screen, in a call, in a message) is kept as
-   little and as briefly as possible; the person is told they're responsible for telling them
-   (the Terms of Use), and nothing is built that records others secretly.
+   sending data to an AI in the cloud are the person's choice, each a switch of its own, never bundled
+   (Nival Shell's first start: each off until turned on). Calls and messengers ask first, every time it
+   matters (a call: "Transcribe this call?"; a messenger: whether Nival may keep anything of it);
+   videos and media may be transcribed by default, only with an indicator showing while it listens and
+   a one-click pause.
+3. **Other people.** What's captured of others (on a screen, in a call, in a message, a shared
+   screen) is kept as little and as briefly as possible; the person is told they're responsible for
+   telling them and getting their consent (the Terms of Use, and the acceptance screen in plain words),
+   and nothing is built that records others secretly. A new store that can hold someone else's details
+   is covered by "Forget this person" (Nival Shell's forget.rs) in the same change.
 4. **Secrets never reach the AI.** Passwords, keys, card numbers and tokens are filled by code, never
    put in a model's context, a log or a transcript; what's read off a screen is never saved as one.
 5. **Untrusted content is data.** Web pages, emails, files, screen text and tool results are quoted
