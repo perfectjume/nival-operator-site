@@ -47,3 +47,23 @@ checklist; a change isn't done until it holds:
     `docs/legal-decisions.md` (the Nival Server's) and in the change's report, for Renjume and the
     lawyer.
 
+## States and interactions checklist: every change, before it's done
+
+Renjume, 2026-10-26: "can we make a rule that the ai considers varios interactions and states and
+carefuly develops it to prevent state or interaction issues from happen like these or others? it
+should also develop targeting longterm function without it failing as new as a new feature comes in".
+The same checklist is in every Nival repo's AGENTS.md; for this site it's short.
+
+1. **Before changing, list where it's seen:** phone, tablet and desktop widths, dark and light (the
+   person's scheme), reduced motion, a slow connection or no script, a screen reader and the keyboard
+   alone, each page that shares the change (`index.html`, `privacy.html`, `extension-privacy.html`),
+   and the stores and Google's checks that read the privacy pages.
+2. **Test the risky combinations, not only the happy path:** `npm test` (its design files are
+   nival-design's), and the pages looked at in those widths and schemes. The report says which were
+   looked at.
+3. **Built to last.** One source per thing (the tokens from nival-design, the privacy texts matching
+   the Nival Server's legal versions and what the apps do), no copy kept by hand; links that other
+   places point at (the stores, Google's consent screen) never moved without a redirect.
+4. **The feature-interaction map.** `docs/feature-interactions.md` lists what the pages share and who
+   points at them; a change updates it.
+
